@@ -674,11 +674,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "F:\\Work Space\\Visual Studio 2017\\ReliableUdp\\ReliableUdp\\ReliableUdp.csproj",
+      "projectUniqueName": "F:\\Work Space\\Visual Studio 2017\\SimpleReliableUdp\\trunk\\ReliableUdp\\ReliableUdp\\ReliableUdp.csproj",
       "projectName": "ReliableUdp",
-      "projectPath": "F:\\Work Space\\Visual Studio 2017\\ReliableUdp\\ReliableUdp\\ReliableUdp.csproj",
+      "projectPath": "F:\\Work Space\\Visual Studio 2017\\SimpleReliableUdp\\trunk\\ReliableUdp\\ReliableUdp\\ReliableUdp.csproj",
       "packagesPath": "C:\\Users\\Coinmouse\\.nuget\\packages\\",
-      "outputPath": "F:\\Work Space\\Visual Studio 2017\\ReliableUdp\\ReliableUdp\\obj\\",
+      "outputPath": "F:\\Work Space\\Visual Studio 2017\\SimpleReliableUdp\\trunk\\ReliableUdp\\ReliableUdp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",

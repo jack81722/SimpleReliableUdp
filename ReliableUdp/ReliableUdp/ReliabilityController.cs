@@ -32,16 +32,20 @@ namespace ReliableUdp
         /// Resend manager of reliability controller
         /// </summary>
         private SequenceManager resendManager;
+
+        private int ResendCountMax;
+        private int ResendCount;
         #endregion
 
         #region Constructor
         /// <summary>
         /// Constructor of reliability controller
         /// </summary>
-        public ReliabilityController(ReliableUdpClient udpClient)
+        public ReliabilityController(ReliableUdpClient udpClient, int resendMax = 16)
         {   
             this.udpClient = udpClient;
             resendManager = new SequenceManager();
+            ResendCountMax = resendMax;
         }
         #endregion
 
@@ -192,6 +196,7 @@ namespace ReliableUdp
                 {
                     // remove resend event
                     resendManager.RemoveResendEvent(dgram[1]);
+                    ResendCount = 0;
                     return true;
                 }
             }
@@ -234,11 +239,15 @@ namespace ReliableUdp
             {
                 byte[] dgram = resendManager.GetResendData(seqNum);
                 ((UdpClient)udpClient).Send(dgram, dgram.Length);
-
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message + ":" + e.StackTrace);
+            }
+            ResendCount++;
+            if (ResendCount >= ResendCountMax)
+            {
+                throw new Exception("Resend too much.");
             }
         }
 
